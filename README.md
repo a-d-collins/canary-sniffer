@@ -26,11 +26,12 @@ If no errors have occurred up to this point you are ready to run the application
 
 ## Running canary-sniffer (macOS)
 1. Open two terminal tabs/windows and, in each tab/window, `cd` into the canary-sniffer project directory.
-2. In one of the terminal tabs/windows, start the flask server by running:
+2. Activate the 'sniff' virtual env in each tab/window with the `source <path/to/sniff>/bin/activate`
+3. In one of the terminal tabs/windows, start the flask server by running:
 ```
 python api.py
 ```
-3. In the other terminal tab/window, run:
+4. In the other terminal tab/window, run:
 ```
 python query.py
 ```
