@@ -18,6 +18,9 @@ class BaseSniffer:
     mock_domain_name = ""
     protocol = ""
 
+    def __init__(self):
+        self._validate_attributes()
+
     def _build_base_url(self):
         return self.protocol + "://" + self._get_domain_name()
 
@@ -35,6 +38,11 @@ class BaseSniffer:
 
     def _send_get_request(self, url, params=None):
         raise NotImplementedError
+
+    def _validate_attributes(self):
+        if not self.domain_name or not self.mock_domain_name or not self.protocol:
+            raise AttributeError("Missing attribute(s). The following attributes are required for all"
+                                 "subclasses of BaseSniffer: domain_name, mock_domain_name, protocol")
 
     def has_septic(self, address, zipcode):
         raise NotImplementedError
